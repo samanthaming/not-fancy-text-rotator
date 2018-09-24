@@ -1,0 +1,157 @@
+/* ==================
+ *  VARIABLES
+ * ================== */
+:root {
+  --color-red: hsl(348, 100%, 61%);
+
+  --color-header: hsl(244.9, 62%, 15.5%);
+  --color-header-inverse: hsl(244.9, 62%, 65%);
+
+  --color-background: hsl(236.9, 38.1%, 30.4%);
+  --color-background-inverse: hsl(236.9, 38.1%, 80%);
+
+  --word-font: 40px;
+  --word-height: 40px;
+  --word-timing: cubic-bezier(0.8, 0.01, 0.975, 0.71);
+  --word-duration: 0.8s;
+}
+/* ==================
+ *  APP
+ * ================== */
+body {
+  font-family: 'Luckiest Guy', cursive;
+  color: var(--color-black);
+}
+.outer-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--color-background);
+  justify-content: space-between;
+}
+h1 {
+  font-size: 40px;
+  padding: 25px 0 15px;
+  background: var(--color-header);
+  width: 100%;
+  text-align: center;
+  color: var(--color-header-inverse);
+}
+.inner-container {
+  display: flex;
+  height: 200px;
+  justify-content: center;
+}
+
+/* WORD */
+
+.fa-heart {
+  padding-left: 15px;
+  color: var(--color-red);
+}
+h2 {
+  font-size: var(--word-font);
+  padding: 5px 0;
+  color: white;
+}
+ul {
+  position: relative;
+  width: 200px;
+}
+ul > li {
+  position: absolute;
+  left: 0;
+  padding: 10px 15px;
+  width: 100%;
+  font-size: var(--word-font);
+}
+li:not(.w1) {
+  transition: top 0.5s var(--word-timing);
+}
+
+/* WORD PLACEMENT */
+
+.w1 {
+  top: 0px;
+  animation: drop-in 0.5s var(--word-timing);
+}
+.w2 {
+  top: var(--word-height);
+}
+.w3 {
+  top: calc(var(--word-height) * 2);
+}
+.w4 {
+  top: calc(var(--word-height) * 3);
+}
+.w5 {
+  top: calc(var(--word-height) * 4);
+  animation: slide-off 0.8s 0.8s forwards ease;
+}
+
+@keyframes drop-in {
+  0% {
+    top: -80px;
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes slide-off {
+  100% {
+    left: 1000px;
+    opacity: 0;
+  }
+}
+
+/* ==================
+*  SOCIAL MEDIA
+* ================== */
+.social-media-footer {
+  --font-color: var(--color-background-inverse);
+  --font-size: 1rem;
+  font-family: 'Boogaloo';
+}
+.social-columns {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.9375rem;
+  padding-bottom: 0.625rem;
+  font-size: var(--font-size);
+  color: var(--font-color);
+  width: 100%;
+}
+.social-columns .column {
+  padding: 0.4rem;
+  text-align: center;
+}
+.social-columns a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+.social-columns a:hover {
+  text-decoration: underline;
+}
+/* GITHUB */
+.github-code {
+  color: var(--font-color);
+  font-size: var(--font-size);
+  text-align: center;
+  margin-bottom: 0.625rem;
+}
+.github-code a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+.github-code a:hover {
+   text-decoration: underline;
+}
