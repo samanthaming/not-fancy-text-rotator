@@ -29,6 +29,7 @@ body {
   height: 100vh;
   background: var(--color-background);
   justify-content: space-between;
+  overflow: hidden;
 }
 h1 {
   font-size: 40px;
